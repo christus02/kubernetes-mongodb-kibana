@@ -7,7 +7,7 @@ The landing page has a customer portal form, which upon successfull completion, 
 The data in the mongoDB would be pushed to elastic search on every write using a python parser.
 This data in elastic search can now be visualized in Kibana.
 
-#Application Architecture Overview:
+# Application Architecture Overview:
 
 
 <img src="https://raw.githubusercontent.com/christus02/kubernetes-mongodb-kibana/master/images/app-work-flow.png" width="500">
@@ -18,9 +18,9 @@ Please note that the python parser is basic data parser to fetch data from mongo
 
 It was developed for demo purpose and has lots of scope for development
 
-#How to deploy this Application
+# How to deploy this Application
 
-###Pre-requisites:
+### Pre-requisites:
 1. An already up and running kubernetes cluster
 2. Elastic search container requires that the virtual memory to be more on the host machine on which it is running. This is a limitation with Elastic search in docker world. You can Google more about this. To overcome this limitation, execute the below command on all the worker nodes
 ```
