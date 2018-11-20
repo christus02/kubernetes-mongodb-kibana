@@ -58,6 +58,7 @@ metadata:
     name: mongo
   name: mongo
 spec:
+  clusterIP: None
   ports:
     - port: 27017
       targetPort: 27017
@@ -101,6 +102,7 @@ metadata:
   labels:
     component: elasticsearch
 spec:
+  clusterIP: None
   selector:
     component: elk
   ports:
@@ -129,7 +131,7 @@ spec:
             add:
               - IPC_LOCK
         image: elasticsearch:5.1.1
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         env:
         - name: NAMESPACE
           valueFrom:
@@ -177,7 +179,7 @@ metadata:
     component: elk
     role: kibana
 spec:
-  type: NodePort
+  clusterIP: None
   selector:
     component: elk
   ports:
@@ -206,7 +208,7 @@ spec:
     spec:
       containers:
       - image: christus02/python-mongo-es
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         name: christus-interface
         command: [ "python", "http_server_form.py" ]
         env:
@@ -230,7 +232,7 @@ metadata:
   labels:
       run: christus-service
 spec:
-  type: NodePort
+  clusterIP: None
   ports:
     - port: 80
       targetPort: 7080
