@@ -208,7 +208,7 @@ spec:
     spec:
       containers:
       - image: christus02/python-mongo-es
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         name: christus-interface
         command: [ "python", "http_server_form.py" ]
         env:
