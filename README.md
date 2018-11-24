@@ -42,3 +42,4 @@ or you can clone the repository and execute the below command
 kubectl create -f manifests/deployment.yml
 ```
 
+Enjoy!
